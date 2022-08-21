@@ -8,6 +8,7 @@ authors = ["Maicon Renildo <maicon.renildo1@gmail.com>"]
 python = "^3.10"
 Django = "^4.1"
 djangorestframework = "^3.13.1"
+httpx = "^0.23.0"
 
 [tool.poetry.dev-dependencies]
 
