@@ -1,3 +1,6 @@
 Django >=4.1
 djangorestframework >=3.13.1
 httpx >=0.23.0
+redis >=4.3.4
+rq >=1.11.0
+python-dotenv >=0.20.0
