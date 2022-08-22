@@ -31,3 +31,36 @@ class AssetsRegister():
             )
 
       print("Dados dos ativos cadastrados com sucesso")
+
+
+def get_asset_cotation(code:str):
+    import httpx,os,dotenv
+    dotenv.load_dotenv(dotenv.find_dotenv())
+    response = httpx.get(
+        url="https://api.hgbrasil.com/finance/stock_price?key=" + os.getenv("HG_API_KEY") + "&symbol=" + code,
+        timeout=60
+    ).json()['results']
+
+    try:
+        return response[code.upper()]['price']
+    except:
+        raise Exception("Code note found")
+
+
+def send_purchase_recommendation_email(asset_code:str,price:float,email:str):
+    from assets.email import send
+
+    return send(
+        to=email,
+        subject="Recomendação de compra - " + asset_code,
+        msg="A cotação atual do ativo é de R$ " + str(price) + " . Conforme os parâmetros de monitoramento, sugerimos a compra." 
+    )
+
+
+def send_sale_recommendation_email(asset_code:str,price:float,email:str):
+    from assets.email import send
+    return send(
+        to=email,
+        subject="Recomendação de venda - " + asset_code,
+        msg="A cotação atual do ativo é de R$ " + str(price) + " . Conforme os parâmetros de monitoramento, sugerimos a venda." 
+    )
