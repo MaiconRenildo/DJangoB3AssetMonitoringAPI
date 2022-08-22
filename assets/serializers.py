@@ -9,4 +9,4 @@ class AssetSerializer(serializers.ModelSerializer):
 class MonitoringSerializer(serializers.ModelSerializer):
   class Meta:
     model = models.Monitoring
-    fields = ("asset_id","upper_price_limit","lower_price_limit")
+    fields = ("asset_id","upper_price_limit","lower_price_limit","id")
