@@ -16,3 +16,4 @@ class Monitoring(models.Model):
     created_at = models.DateField(auto_now_add=True)
     buy_order = models.BooleanField(null=True)
     sell_order = models.BooleanField(null=True)
+    interval = models.IntegerField(null=False)
