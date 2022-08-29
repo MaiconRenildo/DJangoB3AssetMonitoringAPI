@@ -13,5 +13,5 @@ route.register(r'monitoring',viewset.MonitoringViewSet,basename='monitoring')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(route.urls)),
-    path('assets/all',views.AllAssets.as_view())
+    path('monitoring',views.AssetMonitoring.as_view())
 ]
