@@ -4,3 +4,4 @@ httpx >=0.23.0
 redis >=4.3.4
 rq >=1.11.0
 python-dotenv >=0.20.0
+pydantic >=1.10.0
