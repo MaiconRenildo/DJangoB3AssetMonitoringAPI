@@ -10,6 +10,7 @@ class AppConfig(AppConfig):
         is_runserver = any(arg.casefold() == "runserver" for arg in sys.argv)
 
         if (is_manage_py and is_runserver):
-            from assets import config
+            from assets import config,queue
+            queue.monitoring_queue().empty()
             config.insert_assets()
             config.start_crons()
