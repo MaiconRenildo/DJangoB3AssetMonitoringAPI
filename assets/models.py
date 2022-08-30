@@ -10,7 +10,7 @@ class Asset(models.Model):
 
 class Monitoring(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid4,editable=False,unique=True)
-    asset_id = models.ForeignKey(to=Asset,on_delete=models.CASCADE)
+    asset_id = models.ForeignKey(to=Asset,on_delete=models.CASCADE,unique=True)
     upper_price_limit = models.FloatField(verbose_name="upper_price_limit")
     lower_price_limit = models.FloatField(verbose_name="lower_price_limit")
     created_at = models.DateField(auto_now_add=True)
