@@ -31,8 +31,7 @@ def get_monitoring_params(req:Request):
         upper_price_limit=body['upper_price_limit'],
         lower_price_limit=body['lower_price_limit'],
         interval=body['interval'],
-        asset_id=body['asset_id'],
-        id=body['id'],
+        asset_id=body['asset_id']
       )
     except:
       return False
