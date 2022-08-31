@@ -29,7 +29,7 @@ Através dela é possível definir um plano de investimento. Isto é, definir um
 
 ## Configurações iniciais
 
-Primeiramente é necessário criar as migrations. Para isso, execute os comandos abaixo:
+Primeiramente é necessário criar as migrations. Para isso, abra o terminal do container de desenvolvimento e execute os comandos abaixo:
 
 ```
 python manage.py makemigrations
@@ -42,7 +42,7 @@ python manage.py createsuperuser
 
 ## Execução
 
-Para executar o projeto, acesse o terminal do container de desenvolvimento e execute os comandos abaixo em paralelo:
+Para executar o projeto, acesse o terminal e execute os comandos abaixo em paralelo:
 ```
 rq worker monitoring email --with-scheduler
 python manage.py runserver --noreload
